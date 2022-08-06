@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 //Middlewares
-dotenv.config({ path: "config/config.env" });
+dotenv.config({ path: "config.env" });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
