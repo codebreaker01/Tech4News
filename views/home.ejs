@@ -1,0 +1,336 @@
+<%-include("partials/header.ejs") %> 
+
+    <main id="main">
+      <!-- ======= Hero Slider Section ======= -->
+      <section id="hero-slider" class="hero-slider">
+        <div class="container-md" data-aos="fade-in">
+          <div class="row">
+            <div class="col-12">
+              <div class="swiper sliderFeaturedPosts">
+                <div class="swiper-wrapper">
+
+                  <% for(let i=0;i<sliderPosts.length;i++) {%> 
+
+                    <div class="swiper-slide">
+                      <a
+                        href="/posts/<%=sliderPosts[i].id %> "
+                        class="img-bg d-flex align-items-end"
+                        style="
+                          background-image: url('<%=sliderPosts[i].yoast_head_json.og_image[0].url %>');
+                        "
+                      >
+                        <div class="img-bg-inner">
+                          <h2>
+                            <%- sliderPosts[i].title.rendered %> 
+                          </h2>
+                          <p>
+                            <%- sliderPosts[i].excerpt.rendered %>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <% } %> 
+                  
+
+                </div>
+                <div class="custom-swiper-button-next">
+                  <span class="bi-chevron-right"></span>
+                </div>
+                <div class="custom-swiper-button-prev">
+                  <span class="bi-chevron-left"></span>
+                </div>
+
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Hero Slider Section -->
+
+      <!-- ======= Post Grid Section ======= -->
+      <section id="posts" class="posts">
+        <div class="container" data-aos="fade-up">
+          <div
+            class="section-header d-flex justify-content-between align-items-center mb-5"
+          >
+            <h2>Latest From Freelancing</h2>
+            <div><a href="/categories/freelancing" class="more">See All Posts</a></div>
+          </div>
+          <div class="row g-5">
+            <div class="col-lg-4">
+              <div class="post-entry-1 lg">
+                <a href="/posts/<%=latestFreelancingPosts[0].id %>"
+                  ><img
+                    src="<%=latestFreelancingPosts[0].yoast_head_json.og_image[0].url %> "
+                    alt=""
+                    class="img-fluid"
+                /></a>
+                <div class="post-meta">
+                  <span class="mx-1">&bullet;</span> <span><%=latestFreelancingPosts[0].date %> </span>
+                </div>
+                <h2>
+                  <a href="/posts/<%=latestFreelancingPosts[0].id %>"
+                    ><%-latestFreelancingPosts[0].title.rendered %> </a
+                  >
+                </h2>
+                <p class="mb-4 d-block">
+                  <%-latestFreelancingPosts[0].excerpt.rendered %>
+                </p>
+
+                <div class="d-flex align-items-center author">
+                  <div class="name">
+                    <h3 class="m-0 p-0"><%=latestFreelancingPosts[0].yoast_head_json.author %></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8">
+              <div class="row g-5">
+                <div class="col-lg-4 border-start custom-border">
+                  <div class="post-entry-1">
+                    <a href="/posts/<%=latestFreelancingPosts[1].id %>"
+                      ><img
+                        src="<%=latestFreelancingPosts[1].yoast_head_json.og_image[0].url %>"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <div class="post-meta">
+                      <span><%=latestFreelancingPosts[1].date %></span>
+                    </div>
+                    <h2>
+                      <a href="/posts/<%=latestFreelancingPosts[1].id %>"
+                        ><%-latestFreelancingPosts[1].title.rendered %></a
+                      >
+                    </h2>
+                  </div>
+                  <div class="post-entry-1">
+                    <a href="/posts/<%=latestFreelancingPosts[2].id %>"
+                      ><img
+                        src="<%=latestFreelancingPosts[2].yoast_head_json.og_image[0].url %>"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <div class="post-meta">
+                      <span><%=latestFreelancingPosts[2].date %></span>
+                    </div>
+                    <h2>
+                      <a href="/posts/<%=latestFreelancingPosts[2].id %>"
+                        ><%-latestFreelancingPosts[2].title.rendered %></a
+                      >
+                    </h2>
+                  </div>
+                  <div class="post-entry-1">
+                    <a href="/posts/<%=latestFreelancingPosts[3].id %>"
+                      ><img
+                        src="<%=latestFreelancingPosts[3].yoast_head_json.og_image[0].url %>"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <div class="post-meta">
+                      <span><%=latestFreelancingPosts[3].date %></span>
+                    </div>
+                    <h2>
+                      <a href="/posts/<%=latestFreelancingPosts[3].id %>"
+                        ><%-latestFreelancingPosts[3].title.rendered %></a
+                      >
+                    </h2>
+                  </div>
+                </div>
+                <div class="col-lg-4 border-start custom-border">
+                  <div class="post-entry-1">
+                    <a href="/posts/<%=latestFreelancingPosts[4].id %>"
+                      ><img
+                        src="<%=latestFreelancingPosts[4].yoast_head_json.og_image[0].url %>"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <div class="post-meta">
+                      <span><%=latestFreelancingPosts[4].date %></span>
+                    </div>
+                    <h2>
+                      <a href="/posts/<%=latestFreelancingPosts[4].id %>"
+                        ><%-latestFreelancingPosts[4].title.rendered %></a
+                      >
+                    </h2>
+                  </div>
+                  <div class="post-entry-1">
+                    <a href="/posts/<%=latestFreelancingPosts[5].id %>"
+                      ><img
+                        src="<%=latestFreelancingPosts[5].yoast_head_json.og_image[0].url %>"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <div class="post-meta">
+                      <span><%=latestFreelancingPosts[5].date %></span>
+                    </div>
+                    <h2>
+                      <a href="/posts/<%=latestFreelancingPosts[5].id %>"
+                        ><%-latestFreelancingPosts[5].title.rendered %></a
+                      >
+                    </h2>
+                  </div>
+                  <div class="post-entry-1">
+                    <a href="/posts/<%=latestFreelancingPosts[6].id %>"
+                      ><img
+                        src="<%=latestFreelancingPosts[6].yoast_head_json.og_image[0].url %>"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <div class="post-meta">
+                      <span><%=latestFreelancingPosts[6].date %></span>
+                    </div>
+                    <h2>
+                      <a href="/posts/<%=latestFreelancingPosts[6].id %>"
+                        ><%-latestFreelancingPosts[6].title.rendered %></a
+                      >
+                    </h2>
+                  </div>
+                </div>
+
+                <!-- Trending Section -->
+                <div class="col-lg-4">
+                  <div class="trending">
+                    <h3>More Posts</h3>
+                    <ul class="trending-post">
+
+                      <% for(let i =7;i<latestFreelancingPosts.length;i++) {%> 
+                        <li>
+                          <a href="/posts/<%=latestFreelancingPosts[i].id %>">
+                            <h3>
+                              <%-latestFreelancingPosts[i].title.rendered %>
+                            </h3>
+                            <span class="author"><%=latestFreelancingPosts[i].yoast_head_json.author %></span>
+                          </a>
+                        </li>
+                        <% } %> 
+                      
+
+                    </ul>
+                  </div>
+                </div>
+                <!-- End Trending Section -->
+              </div>
+            </div>
+          </div>
+          <!-- End .row -->
+        </div>
+      </section>
+      <!-- End Post Grid Section -->
+
+      <!-- ======= Culture Category Section ======= -->
+      <section class="category-section">
+        <div class="container" data-aos="fade-up">
+          <div
+            class="section-header d-flex justify-content-between align-items-center mb-5"
+          >
+            <h2>Latest From Technology</h2>
+            <div><a href="category.html" class="more">See All Posts</a></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-9">
+              <div class="d-lg-flex post-entry-2">
+                <a
+                  href="single-post.html"
+                  class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block"
+                >
+                  <img
+                    src="<%=latestTechnologyPosts[0].yoast_head_json.og_image[0].url %>"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </a>
+                <div>
+                  <div class="post-meta">
+                    <span class="mx-1">&bullet;</span> <span><%=latestTechnologyPosts[0].date %></span>
+                  </div>
+                  <h3>
+                    <a href="/posts/<%=latestTechnologyPosts[0].id %>"
+                      ><%-latestTechnologyPosts[0].title.rendered %></a
+                    >
+                  </h3>
+                  <p>
+                    <%-latestTechnologyPosts[0].excerpt.rendered %>
+                  </p>
+                  <div class="d-flex align-items-center author">
+                    <div class="name">
+                      <h3 class="m-0 p-0"><%=latestTechnologyPosts[0].yoast_head_json.author %></h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="post-entry-1 border-bottom">
+                    <a href="/posts/<%=latestTechnologyPosts[1].id %>"
+                      ><img
+                        src="<%=latestTechnologyPosts[1].yoast_head_json.og_image[0].url %>"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <div class="post-meta">
+                      <span><%=latestTechnologyPosts[1].date %></span>
+                    </div>
+                    <h2 class="mb-2">
+                      <a href="/posts/<%=latestTechnologyPosts[1].id %>"
+                        ><%-latestTechnologyPosts[1].title.rendered %></a
+                      >
+                    </h2>
+                    <span class="author mb-3 d-block"><%=latestTechnologyPosts[1].yoast_head_json.author %></span>
+                    <p class="mb-4 d-block">
+                      <%-latestTechnologyPosts[1].excerpt.rendered %>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="post-entry-1">
+                    <a href="/posts/<%=latestTechnologyPosts[2].id %>"
+                      ><img
+                        src="<%=latestTechnologyPosts[2].yoast_head_json.og_image[0].url %>"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                    <div class="post-meta">
+                      <span><%=latestTechnologyPosts[2].date %></span>
+                    </div>
+                    <h2 class="mb-2">
+                      <a href="/posts/<%=latestTechnologyPosts[2].id %>"
+                        ><%-latestTechnologyPosts[2].title.rendered %></a
+                      >
+                    </h2>
+                    <span class="author mb-3 d-block"><%=latestTechnologyPosts[2].yoast_head_json.author %></span>
+                    <p class="mb-4 d-block">
+                      <%-latestTechnologyPosts[2].excerpt.rendered %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <% for(let i=3;i<latestTechnologyPosts.length;i++) {%>
+                <div class="post-entry-1 border-bottom">
+                  <div class="post-meta">
+                    <span class="mx-1">&bullet;</span> <span><%=latestTechnologyPosts[i].date %></span>
+                  </div>
+                  <h2 class="mb-2">
+                    <a href="/posts/<%=latestTechnologyPosts[i].id %>"
+                      ><%-latestTechnologyPosts[i].title.rendered %></a
+                    >
+                  </h2>
+                  <span class="author mb-3 d-block"><%=latestTechnologyPosts[i].yoast_head_json.author %></span>
+                </div>
+                <% } %>  
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Culture Category Section -->
+    </main>
+    <!-- End #main -->
+
+    <%-include("partials/footer.ejs") %> 

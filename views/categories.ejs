@@ -1,0 +1,122 @@
+<%-include("partials/header.ejs") %> 
+
+    <main id="main">
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9" data-aos="fade-up">
+              <h3 class="category-title">Category: <%=category %> </h3>
+
+              <% for(let i=0;i<categoryPosts.length;i++) {%> 
+              <div class="d-md-flex post-entry-2 half">
+                <a href="/posts/<%=categoryPosts[i].id %>" class="me-4 thumbnail">
+                  <img
+                    src="<%=categoryPosts[i].yoast_head_json.og_image[0].url %>"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </a>
+                <div>
+                  <div class="post-meta">
+                    <span><%=categoryPosts[i].date %></span>
+                  </div>
+                  <h3>
+                    <a href="/posts/<%=categoryPosts[i].id %> "
+                      ><%-categoryPosts[i].title.rendered %></a
+                    >
+                  </h3>
+                  <p>
+                    <%-categoryPosts[i].excerpt.rendered %> 
+                  </p>
+                  <div class="d-flex align-items-center author">
+                    <div class="name">
+                      <h3 class="m-0 p-0"><%=categoryPosts[i].yoast_head_json.author %></h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% } %> 
+
+              <!-- Pagination -->
+
+              <div class="text-start py-4">
+                <div id="pagination" class="custom-pagination">
+                  <a href="/categories/<%=category%>/<%=page-1%>" class="prev">Prevous</a>
+                  <a href="/categories/<%=category%>/<%=page+1%>" class="next">Next</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <!-- ======= Sidebar ======= -->
+              <div class="aside-block">
+                <ul
+                  class="nav nav-pills custom-tab-nav mb-4"
+                  id="pills-tab"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="pills-latest-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-latest"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-latest"
+                      aria-selected="false"
+                    >
+                      Latest
+                    </button>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent">
+
+                  <!-- Latest -->
+                  <div
+                    class="tab-pane fade show active"
+                    id="pills-latest"
+                    role="tabpanel"
+                    aria-labelledby="pills-latest-tab"
+                  >
+                  <% for(let i=0;i<latestPosts.length;i++) {%> 
+                    <div class="post-entry-1 border-bottom">
+                      <div class="post-meta">
+                        <span><%=latestPosts[i].date %> </span>
+                      </div>
+                      <h2 class="mb-2">
+                        <a href="/posts/<%=latestPosts[i].id %> "
+                          ><%-latestPosts[i].title.rendered %> </a
+                        >
+                      </h2>
+                      <span class="author mb-3 d-block"><%=latestPosts[i].yoast_head_json.author %> </span>
+                    </div>
+                    <% } %> 
+                  </div>
+                  <!-- End Latest -->
+                </div>
+              </div>
+
+              <div class="aside-block">
+                <h3 class="aside-title">Categories</h3>
+                <ul class="aside-links list-unstyled">
+                  <li>
+                    <a href="/categories/freelancing/1"
+                      ><i class="bi bi-chevron-right"></i>Freelancing</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/categories/technology/1"><i class="bi bi-chevron-right"></i>Technology</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- End Categories -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <%-include("partials/footer.ejs") %> 
